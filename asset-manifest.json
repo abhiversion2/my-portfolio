@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/my-portfolio/static/css/main.e325766d.css",
+    "main.js": "/my-portfolio/static/js/main.d42c1524.js",
+    "static/js/453.438d9e50.chunk.js": "/my-portfolio/static/js/453.438d9e50.chunk.js",
+    "static/media/myphoto.jpg": "/my-portfolio/static/media/myphoto.b85fec250cde323dc0cb.jpg",
+    "static/media/identityaccess.png": "/my-portfolio/static/media/identityaccess.71f25962d3636d52b2b1.png",
+    "static/media/administrator.png": "/my-portfolio/static/media/administrator.e70e1fc47070bb84305e.png",
+    "static/media/solutionsarchitect.png": "/my-portfolio/static/media/solutionsarchitect.1ebeda7f93f982604622.png",
+    "static/media/dataengineer.png": "/my-portfolio/static/media/dataengineer.0f80cac871ba82daa80e.png",
+    "static/media/devops.png": "/my-portfolio/static/media/devops.b3de08d2561a94a3fe0e.png",
+    "static/media/developer.png": "/my-portfolio/static/media/developer.61f829c26f1a7015cf0f.png",
+    "static/media/terraform.png": "/my-portfolio/static/media/terraform.557177cb447d21069d7f.png",
+    "static/media/automation.jpg": "/my-portfolio/static/media/automation.3e1e2bacdcec85be9869.jpg",
+    "static/media/datasciencewithpython.jpg": "/my-portfolio/static/media/datasciencewithpython.13fbb032c070a78f6100.jpg",
+    "static/media/redhat.png": "/my-portfolio/static/media/redhat.a0cea50ef5fb853aa641.png",
+    "index.html": "/my-portfolio/index.html",
+    "main.e325766d.css.map": "/my-portfolio/static/css/main.e325766d.css.map",
+    "main.d42c1524.js.map": "/my-portfolio/static/js/main.d42c1524.js.map",
+    "453.438d9e50.chunk.js.map": "/my-portfolio/static/js/453.438d9e50.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e325766d.css",
+    "static/js/main.d42c1524.js"
+  ]
+}
