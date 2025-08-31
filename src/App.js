@@ -39,7 +39,7 @@ const App = () => {
 
   // Data for the portfolio sections
   const portfolioData = {
-    name: "Abhijeet Vishwakarma",
+    name: "Abhijeet V",
     tagline: "Senior DevOps Engineer",
     about: "I am a seasoned Senior DevOps Engineer with over 6+ years of experience in building and managing robust, scalable, and secure cloud infrastructure. My expertise lies in automating the software development lifecycle (SDLC) through Continuous Integration and Continuous Delivery (CI/CD) pipelines. I am passionate about leveraging technologies like Docker, Kubernetes, and Terraform to streamline operations and enhance developer productivity. I have a strong background in both on-premises and multi-cloud environments, and I thrive on solving complex problems to deliver reliable and high-performing systems.",
     cvUrl: "https://example.com/abhijeet_vishwakarma_cv.pdf", // Placeholder URL for CV
