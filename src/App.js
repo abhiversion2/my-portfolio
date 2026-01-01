@@ -28,29 +28,28 @@ import rpaImage from './assets/automation.jpg';
 import dataengineerImage from './assets/dataengineer.png';
 import developerImage from './assets/developer.png';
 import datasciencepythonImage from './assets/datasciencewithpython.jpg';
+import githubactionsImage from './assets/github-actions.png';
 
-// Main App Component
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [popupContent, setPopupContent] = useState('');
+  const [popupContent, setPopupContent] = useState(null);
 
-  // Data for the portfolio sections
   const portfolioData = {
     name: "Abhijeet Vishwakarma",
     tagline: "Senior DevOps Engineer",
-    about: "I am a seasoned Senior DevOps Engineer with over 6+ years of experience in building and managing robust, scalable, and secure cloud infrastructure. My expertise lies in automating the software development lifecycle (SDLC) through Continuous Integration and Continuous Delivery (CI/CD) pipelines. I am passionate about leveraging technologies like Docker, Kubernetes, and Terraform to streamline operations and enhance developer productivity. I have a strong background in both on-premises and multi-cloud environments, and I thrive on solving complex problems to deliver reliable and high-performing systems.",
-    cvUrl: "https://example.com/abhijeet_vishwakarma_cv.pdf", // Placeholder URL for CV
+    about: "SRE / DevOps Engineer with 6+ years of experience in designing, automating, and operating scalable, highly available systems in multi-cloud environments (Microsoft Azure, AWS, and Google Cloud Platform). Strong expertise in cloud infrastructure, CI/CD pipelines, Infrastructure as Code, monitoring and alerting, incident management, and production operations. Proven ability to work cross-functionally to translate business requirements into reliable and secure technical solutions. Solid foundation in system design, networking concepts, and Linux administration, with a strong focus on automation, reliability, and operational excellence",
+    cvUrl: "https://example.com/abhijeet_vishwakarma_cv.pdf",
     skills: [
-      { category: 'Cloud Platforms', items: ['Azure', 'AWS', 'GCP', 'Databricks'] },
+      { category: 'Cloud Platforms', items: ['Microsoft Azure', 'Amazon Web Services (AWS)', 'Google Cloud Platforms (GCP)', 'Oracle Cloud Infrastructure (OCI)','Databricks'] },
       { category: 'Version Control & Source Code Management (SCM)', items: ['Git', 'GitHub', 'GitLab', 'Bitbucket'] },
       { category: 'CI/CD (Continuous Integration / Continuous Deployment)', items: ['GitHub Actions', 'Azure DevOps', 'Jenkins', 'Spinnaker', 'ArgoCD'] },
-      { category: 'Configuration Management & Infrastructure as Code (IaC)', items: ['Terraform', 'Ansible'] },
-      { category: 'Containerization & Orchestration', items: ['Docker', 'Kubernetes'] },
+      { category: 'Configuration Management & Infrastructure as Code (IaC)', items: ['Terraform', 'Ansible', 'ARM Template'] },
+      { category: 'Containerization & Orchestration', items: ['Docker', 'Kubernetes', 'Azure Kubernetes Service'] },
       { category: 'Monitoring, Logging & Observability', items: ['Prometheus', 'Grafana', 'Datadog', 'Splunk', 'Dynatrace'] },
-      { category: 'Scripting & Programming', items: ['PowerShell', 'Bash', 'Python'] },
+      { category: 'Scripting & Programming', items: ['PowerShell', 'Bash', 'Python', 'SQL'] },
       { category: 'Code Quality & Security', items: ['SonarCloud', 'CheckOv', 'Tflint', 'Terratest'] },
     ],
     projects: [
@@ -81,7 +80,20 @@ const App = () => {
             title: "Senior DevOps Engineer",
             duration: "Feb 2025 - Present",
             description: "Senior DevOps Engineer at Luxoft, based in Pune, Maharashtra, India, working remotely.",
-            popupDetails: "Led the design and deployment of scalable cloud solutions using Azure and AWS, optimized CI/CD pipelines with GitHub Actions, and implemented Kubernetes orchestration for microservices. Collaborated with cross-functional teams to enhance system reliability and reduce downtime by 30%.",
+            popupDetails: (
+              <ul className="list-disc pl-6 space-y-2 text-lg leading-relaxed">
+                <li>Managed and automated cloud infrastructure across AWS and GCP, supporting production workloads with an emphasis on scalability, security, and operational reliability.</li>
+                <li>Automated infrastructure provisioning using Terraform, leveraging reusable modules, workspaces, remote state management, and CI/CD integrations to enable consistent multi-environment deployments.</li>
+                <li>Implemented automated testing for Infrastructure as Code (IaC) by developing unit and integration tests using Terratest (Go), reducing configuration drift and improving infrastructure stability.</li>
+                <li>Developed Python-based automation workflows and Apache Airflow DAGs, orchestrating cloud and operational tasks with improved scheduling, reliability, and observability.</li>
+                <li>Authored Python test cases for Airflow DAGs using Pytest, validating DAG structure, task dependencies, and execution logic to ensure correctness and prevent failures in production pipelines.</li>
+                <li>Built and maintained CI/CD pipelines using GitHub Actions and Spinnaker, integrating with cloud-native services to support continuous delivery and automated deployments.</li>
+                <li>Deployed and operated containerized applications on AWS, including ECS (Fargate), along with EC2, S3, Lambda, and Managed Apache Airflow, using Spinnaker and Jules pipelines for end-to-end deployment automation.</li>
+                <li>Deployed secure multi-cloud architecture using Aviatrix, enabling governed, highly available connectivity into Google Cloud Platform (GCP) with strong network segmentation and centralized control.</li>
+                <li>Implemented monitoring and observability solutions using Datadog, Dynatrace, and Splunk, creating dashboards and alerts to proactively detect, troubleshoot, and resolve system issues.</li>
+                <li>Diagnosed and resolved CI/CD pipeline and deployment issues, performing root cause analysis across build, infrastructure, and runtime layers to ensure reliable releases and minimal downtime.</li>
+              </ul>
+            ),
           },
         ],
       },
@@ -92,7 +104,21 @@ const App = () => {
             title: "Technical Lead",
             duration: "Jun 2023 - Jan 2025",
             description: "Technical Lead at Cognizant, based in Pune, Maharashtra, India.",
-            popupDetails: "Primarily working on IAC tools like Terraform, Configuration Mgmt tools like Ansible, Powershell, etc. As well as Azure Data Platform tools such as Azure Data Factory, Azure Databricks, Azure SQL Server, Azure Synapse Analytics, Azure Event Hubs and Azure Stream Analytics. Responsible for designing, implementing, and managing CI/CD pipelines using Azure DevOps and GitHub Actions. Led a team of 5 DevOps engineers to streamline deployment processes, resulting in a 40% increase in deployment efficiency. Worked closely with development teams to ensure seamless integration of DevOps practices into the software development lifecycle.",
+            popupDetails: (
+              <ul className="list-disc pl-6 space-y-2 text-lg leading-relaxed">
+                <li>Microsoft Azure experience with Azure Data Engineer and Azure DevOps CI/CD Pipelines.</li>
+                <li>Hands-on experience with ETL tools such as Azure Data Factory and Azure Databricks admin activities including configuring Clusters, Workspaces, User Access Management, Cluster Pools, Policies, and data governance with Unity Catalog.</li>
+                <li>Worked on setting up data platform Azure services like Data Factory, Databricks, SQL Database, Synapse Analytics, Dedicated & Spark Pools, Data Lake Storage, Stream Analytics, and other services for Data Analytics and ETL OPS teams.</li>
+                <li>Experience with configuration management tools like PowerShell and Ansible.</li>
+                <li>Implemented and maintained CI/CD processes, automating deployments using Azure DevOps CI/CD.</li>
+                <li>Automated deployment of reliable cloud infrastructure using Terraform, reducing human efforts by 60%.</li>
+                <li>Working experience on Windows and Linux Azure VMs, Key Vault, Storage Accounts, Virtual Networks, and other Azure services.</li>
+                <li>Skilled in troubleshooting live production services.</li>
+                <li>Achieved a remarkable 60% reduction in workload by implementing PowerShell scripting for automation, resulting in a significant 55% decrease in errors.</li>
+                <li>Managed multiple Azure environments including production accounts with setup & configuration of Azure compute, networking, and data platform services.</li>
+                <li>Working experience with container services: Docker, Kubernetes, AKS (Azure Kubernetes Service), ACR (Azure Container Registry), and ACI (Azure Container Instances).</li>
+              </ul>
+            ),
           },
         ],
       },
@@ -103,7 +129,17 @@ const App = () => {
             title: "System Engineer",
             duration: "Mar 2022 - Jun 2023",
             description: "System Engineer at Wipro, based in Mumbai, Maharashtra, India.",
-            popupDetails: "Hands-On experience in building and managing Azure DevOps CI/CD pipeline, Azure DevOps services such as Boards, Artifacts, Repos, Service Connections, Create and configure build and Release pipeline for identified applications (Dev, QA, etc) as per target CICD architecture, etc. Implementing Azure DevOps Development Processes, Continuous Integration, Continuous Delivery, Application Infrastructure, etc. Run CICD Pipelines to install agents on Virtual Machines, Run PowerShell scripts, support ongoing production deployments. Responsible for the updating of configuration management tools, code, and modules for the purpose of streamlining implementation and supportability. Using Terraform for automating infrastructure provisioning, hands-on experience on various Azure Services and has an experience in provisioning them via Terraform. Experience with VCS, branching strategies with Git/GitHub and Azure Repos, Understand and provide support to development teams including source code management and Azure DevOps pipeline adoption. Good Understanding of configuration management of the infrastructure and IAC tools, PowerShell, YAML and JSON language, Scripting, Server automation tool Ansible, Kubernetes & containers.",
+            popupDetails: (
+              <ul className="list-disc pl-6 space-y-2 text-lg leading-relaxed">
+                <li>Implemented and managed Azure DevOps CI/CD pipelines for automated build, test, and deployment processes.</li>
+                <li>Used Terraform and ARM templates for automating infrastructure provisioning across Azure environments.</li>
+                <li>Leveraged PowerShell and Ansible for configuration management and automation of server and application setups.</li>
+                <li>Implemented and configured various Azure services including Virtual Machines, Virtual Networks (VNets), Load Balancers, Web Apps, Backup, Azure Active Directory (Azure AD), Storage Accounts, Key Vaults, Logic Apps, and more.</li>
+                <li>Extensive experience with Version Control Systems (Git), branching strategies, and best practices.</li>
+                <li>Streamlined implementation and support by regularly updating configuration management tools, code, and reusable modules.</li>
+                <li>Provided ongoing support for production deployment issues and assisted development teams with source code management and adoption of Azure DevOps pipelines.</li>
+              </ul>
+            ),
           },
         ],
       },
@@ -114,7 +150,20 @@ const App = () => {
             title: "Senior Operations Executive",
             duration: "Jul 2021 - Mar 2022",
             description: "Senior Operations Executive at Infosys, based in Pune, Maharashtra, India.",
-            popupDetails: "Install, configure, upgrade, and maintain server systems running windows server and VMware ESXI. Hands-on knowledge of Azure Active directory, VMware vCenter, DHCP, Share folder & NTFS permissions, DNS, Security & AD Groups, and Disk & Printer Management. Experience in working with physical servers and VM’s, Hyper-V and Azure Infra. Creating & managing Snapshots, Tags, Hyper-V server and virtual disks (VHD& VHDX), Consolidating VHDs. Designed and configured Azure Virtual Networks, Subnets, Azure Network Settings, VMSS, Network Security Groups, Traffic Manager, Load Balancer, Routing and Provisioning Virtual Machines. Experience on App Services, Web Apps, Firewall, Network Watcher, Monitor, Key Vault, VPN, Log Analytics, Alerts Storage Accounts, and Cost Management. Hands-on experience in Managing & Maintaining Azure infra using PowerShell, Azure Portal, and ARM templates. Working knowledge in Containers, Micro Services, Linux, PowerShell scripting, Backups,, Migration of on-premises VMs to Cloud and can handle these activities. Identifying system faults, hardware issues & co coordinating with vendor for hardware replacement on HP/Dell Servers. Documentation of solutions/RCAs, develop/maintain system implementation documents, knowledge base, service reports and operational procedures.Working on ITIL standards to provide technical support in order to ensure a high degree of Customer Satisfaction through SLA & Process Compliance.",
+            popupDetails: (
+              <ul className="list-disc pl-6 space-y-2 text-lg leading-relaxed">
+                <li>Installed, configured, upgraded, and maintained server systems running Windows Server and VMware ESXi.</li>
+                <li>Hands-on expertise with Azure Active Directory, VMware vCenter, DHCP, shared folders & NTFS permissions, DNS, security & AD groups, disk management, and printer management.</li>
+                <li>Experienced in managing physical servers, virtual machines (VMs), Hyper-V, and Azure infrastructure, including creating/managing snapshots, tags, virtual disks (VHD & VHDX), and consolidating VHDs.</li>
+                <li>Designed and configured Azure networking components: Virtual Networks, Subnets, Network Settings, Virtual Machine Scale Sets (VMSS), Network Security Groups, Traffic Manager, Load Balancers, and routing; provisioned Virtual Machines.</li>
+                <li>Worked with Azure App Services, Web Apps, Firewall, Network Watcher, Monitor, Key Vault, VPN, Log Analytics, Alerts, Storage Accounts, and Cost Management.</li>
+                <li>Managed and maintained Azure infrastructure using PowerShell, Azure Portal, and ARM templates.</li>
+                <li>Gained working knowledge of containers, microservices, Linux, PowerShell scripting, backups, and on-premises VM migrations to Azure.</li>
+                <li>Identified system faults and hardware issues; coordinated with vendors for hardware replacement on HP and Dell servers.</li>
+                <li>Documented solutions and root cause analyses (RCAs); developed and maintained system implementation documents, knowledge base articles, service reports, and operational procedures.</li>
+                <li>Followed ITIL standards to deliver technical support, ensuring high customer satisfaction through SLA compliance and process adherence.</li>
+              </ul>
+            ),
           },
           {
             title: "Operations Executive",
@@ -126,19 +175,12 @@ const App = () => {
       },
     ],
     education: [
-      {
-        degree: "Master of Computer Applications",
-        university: "Indira Gandhi National Open University",
-        duration: "2022 - 2024"
-      },
-      {
-        degree: "Bachelor of Science in Computer Science",
-        university: "University of Mumbai",
-        duration: "2016 - 2019"
-      },
+      { degree: "Master of Computer Applications", university: "Indira Gandhi National Open University", duration: "2022 - 2024" },
+      { degree: "Bachelor of Science in Computer Science", university: "University of Mumbai", duration: "2016 - 2019" },
     ],
     certifications: [
       { name: "HashiCorp Certified: Terraform Associate (002)", issuer: "HashiCorp", date: "2022", image: terraformImage },
+      { name: "Github Actions Certified GH-200", issuer: "Microsoft", date: "2025", image: githubactionsImage },
       { name: "Microsoft Certified: Identity and Access Administrator Associate", issuer: "Microsoft", date: "2023", image: identityaccessImage },
       { name: "Microsoft Certified: Azure Solutions Architect Expert", issuer: "Microsoft", date: "2024", image: solutionsarchitectImage },
       { name: "Microsoft Certified: DevOps Engineer Expert", issuer: "Microsoft", date: "2024", image: devopsImage },
@@ -159,7 +201,7 @@ const App = () => {
 
   const handleScroll = () => {
     const sections = ['home', 'about', 'skills', 'work-experience', 'projects', 'certifications', 'education', 'contact'];
-    const scrollPosition = window.scrollY;
+    const scrollPosition = window.scrollY + 100;
 
     let closestSection = 'home';
     let minDistance = Infinity;
@@ -188,7 +230,7 @@ const App = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsMenuOpen(false); // Close menu on mobile
+    setIsMenuOpen(false);
   };
 
   const openPopup = (content) => {
@@ -198,7 +240,7 @@ const App = () => {
 
   const closePopup = () => {
     setIsPopupOpen(false);
-    setPopupContent('');
+    setPopupContent(null);
   };
 
   const navItems = [
@@ -215,20 +257,11 @@ const App = () => {
   const mainBgClass = isDarkMode ? 'bg-gray-900' : 'bg-gray-100';
   const mainTextClass = isDarkMode ? 'text-gray-200' : 'text-gray-800';
   const sidebarBgClass = isDarkMode ? 'bg-gray-800' : 'bg-gray-200';
-  const sidebarBorderClass = isDarkMode ? 'border-gray-700' : 'border-gray-300';
   const cardBgClass = isDarkMode ? 'bg-gray-800' : 'bg-white';
   const cardBorderClass = isDarkMode ? 'border-indigo-500' : 'border-indigo-600';
   const cardShadowClass = isDarkMode ? 'shadow-xl' : 'shadow-lg';
   const sectionTitleClass = isDarkMode ? 'text-white' : 'text-gray-900';
-  const placeholderBgClass = isDarkMode ? 'bg-gray-700' : 'bg-gray-300';
-  const placeholderBorderClass = isDarkMode ? 'border-gray-600' : 'border-gray-400';
-  const hoverBgClass = isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-300';
-  const hoverTextClass = isDarkMode ? 'hover:text-white' : 'hover:text-gray-900';
-  const activeBgClass = isDarkMode ? 'bg-indigo-600' : 'bg-indigo-600';
-  const activeTextClass = isDarkMode ? 'text-white' : 'text-white';
   const iconColorClass = isDarkMode ? 'text-indigo-400' : 'text-indigo-600';
-  const skillsBgClass = isDarkMode ? 'bg-gray-700' : 'bg-gray-300';
-  const skillsTextClass = isDarkMode ? 'text-gray-300' : 'text-gray-700';
   const popupBgClass = isDarkMode ? 'bg-gray-800' : 'bg-white';
   const popupTextClass = isDarkMode ? 'text-gray-200' : 'text-gray-800';
 
@@ -236,120 +269,104 @@ const App = () => {
     <div className={`min-h-screen font-sans leading-relaxed transition-colors duration-300 ${mainBgClass} ${mainTextClass}`}>
       {/* Mobile Menu Button */}
       <button
-        className={`fixed top-4 right-4 z-50 p-2 rounded-full md:hidden transition-transform duration-300 transform hover:scale-110 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-gray-800'}`}
+        className={`fixed top-4 right-4 z-50 p-2 rounded-full md:hidden ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-gray-800'}`}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Sidebar/Mobile Menu */}
-      <aside className={`fixed top-0 left-0 h-full w-64 transition-transform duration-300 z-40 p-6 md:p-8 transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 ${sidebarBgClass} ${isDarkMode ? 'text-gray-200' : 'text-gray-800'}`}>
+      {/* Sidebar */}
+      <aside className={`fixed top-0 left-0 h-full w-64 transition-transform duration-300 z-40 p-6 md:p-8 transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 ${sidebarBgClass}`}>
         <div className="flex flex-col h-full">
           <div className="flex flex-col items-center mb-8">
-            <div className={`w-24 h-24 rounded-full overflow-hidden border-2 ${placeholderBorderClass} ${placeholderBgClass} shadow-lg`}>
+            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-indigo-500 shadow-lg">
               <img src={myphotoImage} alt="Profile" className="w-full h-full object-cover" />
             </div>
-            <h1 className={`text-2xl font-bold mt-4 text-center ${sectionTitleClass}`}>{portfolioData.name}</h1>
-            <p className="text-sm text-gray-400 mt-1 text-center">{portfolioData.tagline}</p>
+            <h1 className={`text-2xl font-bold mt-4 ${sectionTitleClass}`}>{portfolioData.name}</h1>
+            <p className="text-sm text-gray-400 mt-1">{portfolioData.tagline}</p>
           </div>
           <nav className="flex-1">
             <ul className="space-y-2">
               {navItems.map((item) => (
                 <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
+                  <button
                     onClick={() => scrollToSection(item.id)}
-                    className={`flex items-center space-x-3 p-3 rounded-lg font-medium transition-colors duration-200 ${
-                      activeSection === item.id ? `${activeBgClass} ${activeTextClass} shadow-lg` : `${isDarkMode ? 'text-gray-400' : 'text-gray-600'} ${hoverBgClass} ${hoverTextClass}`
+                    className={`w-full flex items-center space-x-3 p-3 rounded-lg font-medium transition-colors ${
+                      activeSection === item.id
+                        ? 'bg-indigo-600 text-white shadow-lg'
+                        : `${isDarkMode ? 'text-gray-400 hover:bg-gray-700' : 'text-gray-600 hover:bg-gray-300'}`
                     }`}
                   >
                     <item.icon size={20} />
                     <span>{item.name}</span>
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
           </nav>
-          <div className="mt-auto pt-6 flex justify-between items-center border-t border-gray-700">
-            <div className="flex justify-center space-x-4">
-              <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className={`${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors duration-200`}>
+          <div className="mt-auto pt-6 border-t border-gray-700 flex justify-between items-center">
+            <div className="flex space-x-4">
+              <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <Linkedin size={24} />
               </a>
-              <a href={portfolioData.contact.github} target="_blank" rel="noopener noreferrer" className={`${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors duration-200`}>
+              <a href={portfolioData.contact.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <Github size={24} />
               </a>
-              <a href={portfolioData.contact.twitter} target="_blank" rel="noopener noreferrer" className={`${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors duration-200`}>
+              <a href={portfolioData.contact.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <Twitter size={24} />
               </a>
             </div>
-            <button
-              onClick={() => setIsDarkMode(!isDarkMode)}
-              className="p-2 rounded-full focus:outline-none transition-colors duration-200"
-            >
+            <button onClick={() => setIsDarkMode(!isDarkMode)}>
               {isDarkMode ? <Sun size={24} className="text-yellow-400" /> : <Moon size={24} className="text-indigo-600" />}
             </button>
           </div>
         </div>
       </aside>
 
-      {/* Main Content Area */}
+      {/* Main Content */}
       <main className="md:ml-64 p-6 md:p-12">
-        {/* Hero Section */}
+        {/* Home */}
         <section id="home" className="h-screen flex items-center justify-center text-center">
           <div className="max-w-3xl">
-            <h2 className={`text-5xl md:text-6xl font-extrabold mb-4 animate-fadeInUp ${sectionTitleClass}`}>
+            <h2 className={`text-5xl md:text-6xl font-extrabold mb-4 ${sectionTitleClass}`}>
               Hi, I'm <span className="text-indigo-500">{portfolioData.name}</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-400 font-light mb-8 animate-fadeInUp animate-delay-200">
-              {portfolioData.tagline}
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-indigo-700 transition-transform duration-300 transform hover:scale-105 animate-fadeInUp animate-delay-400"
-              >
+            <p className="text-lg md:text-xl text-gray-400 mb-8">{portfolioData.tagline}</p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <button onClick={() => scrollToSection('contact')} className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition">
                 Get in Touch
               </button>
-              <a
-                href={portfolioData.cvUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-transparent border-2 border-indigo-600 text-indigo-600 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-indigo-600 hover:text-white transition-all duration-300 transform hover:scale-105 animate-fadeInUp animate-delay-600"
-              >
+              <a href={portfolioData.cvUrl} target="_blank" rel="noopener noreferrer" className="border-2 border-indigo-600 text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-indigo-600 hover:text-white transition flex items-center justify-center">
                 <Download size={20} className="mr-2" /> Download CV
               </a>
             </div>
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" className="py-20 md:py-24">
-          <div className="container mx-auto">
+        {/* About */}
+        <section id="about" className="py-20">
+          <div className="container mx-auto max-w-4xl">
             <h3 className={`text-3xl font-bold text-center mb-10 ${sectionTitleClass}`}>About Me</h3>
-            <div className={`max-w-4xl mx-auto p-8 md:p-12 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass} animate-slideInLeft ${cardBgClass}`}>
-              <p className={`text-lg leading-relaxed text-center ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                {portfolioData.about}
-              </p>
+            <div className={`${cardBgClass} p-8 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass}`}>
+              <p className="text-lg text-center text-gray-300">{portfolioData.about}</p>
             </div>
           </div>
         </section>
-        
-        {/* Skills Section */}
-        <section id="skills" className="py-20 md:py-24">
+
+        {/* Skills */}
+        <section id="skills" className="py-20">
           <div className="container mx-auto">
             <h3 className={`text-3xl font-bold text-center mb-10 ${sectionTitleClass}`}>My Skills</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto animate-slideInRight">
-              {portfolioData.skills.map((skillGroup, index) => (
-                <div key={index} className={`${cardBgClass} p-6 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass}`}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+              {portfolioData.skills.map((skillGroup, i) => (
+                <div key={i} className={`${cardBgClass} p-6 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass}`}>
                   <h4 className={`text-xl font-semibold mb-4 flex items-center ${sectionTitleClass}`}>
-                    <span className={`${iconColorClass} mr-2`}>
-                      <GitCommit size={20} />
-                    </span>
+                    <GitCommit size={20} className={`mr-2 ${iconColorClass}`} />
                     {skillGroup.category}
                   </h4>
                   <ul className="space-y-2">
-                    {skillGroup.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className={`${skillsBgClass} px-4 py-2 rounded-lg text-sm ${skillsTextClass}`}>
+                    {skillGroup.items.map((item, j) => (
+                      <li key={j} className="bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300">
                         {item}
                       </li>
                     ))}
@@ -360,28 +377,26 @@ const App = () => {
           </div>
         </section>
 
-        {/* Work Experience Section */}
-        <section id="work-experience" className="py-20 md:py-24">
+        {/* Work Experience */}
+        <section id="work-experience" className="py-20">
           <div className="container mx-auto">
             <h3 className={`text-3xl font-bold text-center mb-10 ${sectionTitleClass}`}>Work Experience</h3>
-            <div className="space-y-8 max-w-4xl mx-auto animate-fadeIn">
-              {portfolioData.workExperience.map((company, index) => (
-                <div key={index} className={`${cardBgClass} p-6 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass}`}>
+            <div className="space-y-8 max-w-4xl mx-auto">
+              {portfolioData.workExperience.map((company, i) => (
+                <div key={i} className={`${cardBgClass} p-6 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass}`}>
                   <h4 className={`text-xl font-bold mb-4 ${sectionTitleClass}`}>{company.company}</h4>
                   <div className="space-y-4">
-                    {company.roles.map((role, roleIndex) => (
+                    {company.roles.map((role, j) => (
                       <div
-                        key={roleIndex}
-                        className={`${cardBgClass} p-4 rounded-lg ${cardShadowClass} border-l-4 ${cardBorderClass} cursor-pointer`}
+                        key={j}
+                        className={`${cardBgClass} p-4 rounded-lg ${cardShadowClass} border-l-4 ${cardBorderClass} cursor-pointer hover:opacity-90 transition`}
                         onClick={() => openPopup(role.popupDetails)}
                       >
                         <div className="flex justify-between items-start mb-2">
-                          <div>
-                            <h5 className={`text-lg font-semibold ${sectionTitleClass}`}>{role.title}</h5>
-                          </div>
-                          <span className="text-gray-500 text-sm font-light">{role.duration}</span>
+                          <h5 className={`text-lg font-semibold ${sectionTitleClass}`}>{role.title}</h5>
+                          <span className="text-gray-500 text-sm">{role.duration}</span>
                         </div>
-                        <p className={`leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>{role.description}</p>
+                        <p className="text-gray-300">{role.description}</p>
                       </div>
                     ))}
                   </div>
@@ -391,23 +406,23 @@ const App = () => {
           </div>
         </section>
 
-        {/* Projects Section */}
-        <section id="projects" className="py-20 md:py-24">
+        {/* Projects */}
+        <section id="projects" className="py-20">
           <div className="container mx-auto">
             <h3 className={`text-3xl font-bold text-center mb-10 ${sectionTitleClass}`}>Featured Projects</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto animate-fadeIn">
-              {portfolioData.projects.map((project, index) => (
-                <div key={index} className={`${cardBgClass} p-6 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass} flex flex-col hover:scale-105 transition-transform duration-300`}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {portfolioData.projects.map((project, i) => (
+                <div key={i} className={`${cardBgClass} p-6 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass} flex flex-col hover:scale-105 transition`}>
                   <h4 className={`text-xl font-bold mb-2 ${sectionTitleClass}`}>{project.title}</h4>
-                  <p className={`text-sm flex-grow mb-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{project.description}</p>
+                  <p className="text-gray-400 flex-grow mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${isDarkMode ? 'bg-gray-700 text-indigo-400' : 'bg-gray-200 text-indigo-600'}`}>
+                    {project.technologies.map((tech, k) => (
+                      <span key={k} className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-gray-700 text-indigo-400">
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <a href={project.url} target="_blank" rel="noopener noreferrer" className={`flex items-center ${iconColorClass} font-semibold transition-colors duration-200 mt-auto`}>
+                  <a href={project.url} className={`flex items-center ${iconColorClass} font-semibold mt-auto`}>
                     View Project <ExternalLink size={16} className="ml-1" />
                   </a>
                 </div>
@@ -416,44 +431,36 @@ const App = () => {
           </div>
         </section>
 
-        {/* Certifications Section */}
-        <section id="certifications" className="py-20 md:py-24">
+        {/* Certifications */}
+        <section id="certifications" className="py-20">
           <div className="container mx-auto">
             <h3 className={`text-3xl font-bold text-center mb-10 ${sectionTitleClass}`}>Certifications</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto animate-fadeIn">
-              {portfolioData.certifications.map((cert, index) => (
-                <div key={index} className={`${cardBgClass} p-4 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass} text-center flex flex-col items-center`}>
-                  {cert.image && (
-                    <img
-                      src={cert.image}
-                      alt={`${cert.name} logo`}
-                      className="w-24 h-24 object-contain mb-4 rounded-lg"
-                    />
-                  )}
-                  <div>
-                    <h4 className={`text-lg font-bold ${sectionTitleClass}`}>{cert.name}</h4>
-                    <p className={`text-sm text-gray-400`}>{cert.issuer}</p>
-                    <p className={`text-sm text-gray-500`}>{cert.date}</p>
-                  </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {portfolioData.certifications.map((cert, i) => (
+                <div key={i} className={`${cardBgClass} p-6 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass} text-center`}>
+                  {cert.image && <img src={cert.image} alt={cert.name} className="w-24 h-24 object-contain mx-auto mb-4" />}
+                  <h4 className={`text-lg font-bold ${sectionTitleClass}`}>{cert.name}</h4>
+                  <p className="text-sm text-gray-400">{cert.issuer}</p>
+                  <p className="text-sm text-gray-500">{cert.date}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Education Section */}
-        <section id="education" className="py-20 md:py-24">
+        {/* Education */}
+        <section id="education" className="py-20">
           <div className="container mx-auto">
             <h3 className={`text-3xl font-bold text-center mb-10 ${sectionTitleClass}`}>Education</h3>
-            <div className="space-y-8 max-w-4xl mx-auto animate-fadeIn">
-              {portfolioData.education.map((edu, index) => (
-                <div key={index} className={`${cardBgClass} p-8 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass}`}>
-                  <div className="flex justify-between items-center mb-2">
+            <div className="space-y-8 max-w-4xl mx-auto">
+              {portfolioData.education.map((edu, i) => (
+                <div key={i} className={`${cardBgClass} p-8 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass}`}>
+                  <div className="flex justify-between items-center">
                     <div>
                       <h4 className={`text-xl font-bold ${sectionTitleClass}`}>{edu.degree}</h4>
-                      <p className="text-lg text-gray-400">{edu.university}</p>
+                      <p className="text-gray-400">{edu.university}</p>
                     </div>
-                    <span className="text-gray-500 text-sm font-light">{edu.duration}</span>
+                    <span className="text-gray-500 text-sm">{edu.duration}</span>
                   </div>
                 </div>
               ))}
@@ -461,73 +468,45 @@ const App = () => {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="py-20 md:py-24">
+        {/* Contact */}
+        <section id="contact" className="py-20">
           <div className="container mx-auto">
             <h3 className={`text-3xl font-bold text-center mb-10 ${sectionTitleClass}`}>Get in Touch</h3>
-            <div className={`max-w-2xl mx-auto p-8 md:p-12 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass} animate-fadeInUp ${cardBgClass}`}>
-              <p className={`text-lg text-center mb-6 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                I'm currently open to new opportunities. Feel free to reach out!
-              </p>
-              <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
-                <a href={`mailto:${portfolioData.contact.email}`} className={`flex items-center space-x-3 ${iconColorClass} font-medium transition-colors duration-200`}>
-                  <Mail size={24} />
-                  <span className="text-base">{portfolioData.contact.email}</span>
-                </a>
-              </div>
+            <div className={`max-w-2xl mx-auto p-8 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass} ${cardBgClass} text-center`}>
+              <p className="text-lg text-gray-300 mb-6">I'm currently open to new opportunities. Feel free to reach out!</p>
+              <a href={`mailto:${portfolioData.contact.email}`} className={`flex items-center justify-center space-x-3 ${iconColorClass} font-medium`}>
+                <Mail size={24} />
+                <span>{portfolioData.contact.email}</span>
+              </a>
             </div>
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className={`mt-12 py-6 text-center border-t ${sidebarBorderClass} ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-          <p>© {new Date().getFullYear()} {portfolioData.name}. All rights reserved.</p>
+        <footer className="py-6 text-center text-gray-500 border-t border-gray-700">
+          <p>© 2026 {portfolioData.name}. All rights reserved.</p>
         </footer>
       </main>
 
-      {/* Popup Pane */}
+      {/* Popup */}
       {isPopupOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className={`max-w-2xl w-full p-6 rounded-lg ${popupBgClass} ${cardShadowClass} ${popupTextClass} animate-fadeInPopup`}>
-            <div className="flex justify-between items-center mb-4">
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
+          <div className={`max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 rounded-2xl ${popupBgClass} ${cardShadowClass} ${popupTextClass}`}>
+            <div className="flex justify-between items-center mb-6">
               <h3 className={`text-2xl font-bold ${sectionTitleClass}`}>Job Details</h3>
-              <button onClick={closePopup} className={`text-${isDarkMode ? 'gray-400' : 'gray-600'} hover:text-${isDarkMode ? 'white' : 'gray-900'} text-2xl font-bold`}>×</button>
+              <button onClick={closePopup} className="text-3xl font-bold text-gray-400 hover:text-white">&times;</button>
             </div>
-            <p className="text-lg leading-relaxed">{popupContent}</p>
+            <div className="text-lg leading-relaxed">
+              {popupContent}
+            </div>
           </div>
         </div>
       )}
 
-      {/* Tailwind CSS and other scripts */}
+      {/* Custom Animations */}
       <style>{`
-        /* Custom animations for a smoother feel */
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideInLeft {
-          from { opacity: 0; transform: translateX(-50px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes slideInRight {
-          from { opacity: 0; transform: translateX(50px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes fadeInPopup {
-          from { opacity: 0; transform: scale(0.9); }
-          to { opacity: 1; transform: scale(1); }
-        }
-
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInPopup { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
         .animate-fadeInUp { animation: fadeInUp 0.8s ease-out; }
-        .animate-delay-200 { animation-delay: 0.2s; }
-        .animate-delay-400 { animation-delay: 0.4s; }
-        .animate-slideInLeft { animation: slideInLeft 0.8s ease-out; }
-        .animate-slideInRight { animation: slideInRight 0.8s ease-out; }
-        .animate-fadeIn { animation: fadeIn 0.8s ease-in-out; }
         .animate-fadeInPopup { animation: fadeInPopup 0.3s ease-out; }
       `}</style>
     </div>
