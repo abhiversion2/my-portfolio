@@ -16,6 +16,7 @@ import {
   Sun,
   Moon,
   Download,
+  Phone, // Added Phone icon
 } from 'lucide-react';
 import myphotoImage from './assets/myphoto.jpg';
 import terraformImage from './assets/terraform.png';
@@ -193,6 +194,7 @@ const App = () => {
     ],
     contact: {
       email: "vishwakarmaabhijeet739@gmail.com",
+      phone: "+91 8767765307", // Phone number added
       linkedin: "https://www.linkedin.com/in/abhijeet-vishwakarma-117409121/",
       github: "https://github.com/abhiversion2",
       twitter: "https://x.com/AbhijeetVishw10",
@@ -473,11 +475,25 @@ const App = () => {
           <div className="container mx-auto">
             <h3 className={`text-3xl font-bold text-center mb-10 ${sectionTitleClass}`}>Get in Touch</h3>
             <div className={`max-w-2xl mx-auto p-8 rounded-2xl ${cardShadowClass} border-t-4 ${cardBorderClass} ${cardBgClass} text-center`}>
-              <p className="text-lg text-gray-300 mb-6">I'm currently open to new opportunities. Feel free to reach out!</p>
-              <a href={`mailto:${portfolioData.contact.email}`} className={`flex items-center justify-center space-x-3 ${iconColorClass} font-medium`}>
-                <Mail size={24} />
-                <span>{portfolioData.contact.email}</span>
-              </a>
+              <p className="text-lg text-gray-300 mb-8">I'm currently open to new opportunities. Feel free to reach out!</p>
+              
+              <div className="space-y-6">
+                <a 
+                  href={`mailto:${portfolioData.contact.email}`} 
+                  className={`flex items-center justify-center space-x-3 ${iconColorClass} font-medium text-lg hover:underline`}
+                >
+                  <Mail size={28} />
+                  <span>{portfolioData.contact.email}</span>
+                </a>
+
+                <a 
+                  href={`tel:${portfolioData.contact.phone.replace(/\s/g, '')}`} 
+                  className={`flex items-center justify-center space-x-3 ${iconColorClass} font-medium text-lg hover:underline`}
+                >
+                  <Phone size={28} />
+                  <span>{portfolioData.contact.phone}</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>
